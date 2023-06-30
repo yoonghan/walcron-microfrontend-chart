@@ -2,7 +2,7 @@ import fs from "fs";
 import {
   federationName,
   federationExposedComponents,
-} from "./moduleFederation";
+} from "./moduleFederation.js";
 
 const outputDir = "./dist/typings/";
 const declarationFile = outputDir + "types.d.ts";
