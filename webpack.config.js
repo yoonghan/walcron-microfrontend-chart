@@ -1,11 +1,11 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const moduleFederation = require("./moduleFederation");
 
 const deps = require("./package.json").dependencies;
+
 module.exports = {
-  output: {
-    publicPath: "http://localhost:5002/",
-  },
+  output: {},
 
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
@@ -15,7 +15,7 @@ module.exports = {
     port: 5002,
     historyApiFallback: true,
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Origin": "*",
     },
   },
 
@@ -44,12 +44,10 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "chart",
+      name: moduleFederation.federationName,
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {
-        './App1Index': './src/bootstrap',
-      },
+      exposes: moduleFederation.federationExposedComponents,
       shared: {
         ...deps,
         react: {
