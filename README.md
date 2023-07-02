@@ -41,7 +41,7 @@ To build for typescripting for module federation use. If builds successfully a d
 
 ## Important variables
 
-Important variables to set into deployer. Setting in Production/Preview is sufficient and let development use the default. Check these settings in webpack.config.js. Public path is important incase there is routing to use non-root. E.g. /chart instead of / in memory router, later we can introduce e.g. /assets/remoteEntry instead.
+Important variables to set into deployer. Setting in Production/Preview is sufficient and let development use the default for Vercel. Check these settings in webpack.config.js. Publicpath defined in webpack important incase there is routing to use non-root. E.g. /chart instead of / in memory router, later we can introduce e.g. /assets/remoteEntry instead.
 
 | Variable       | Description                      | Default        |
 | -------------- | -------------------------------- | -------------- |
