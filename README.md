@@ -39,6 +39,17 @@ To build for typescripting for module federation use. If builds successfully a d
 @yoonghan:registry=https://npm.pkg.github.com/
 ```
 
+## Important variables
+
+Important variables to set into deployer. Setting in Production/Preview is sufficient and let development use the default. Check these settings in webpack.config.js. Public path is important incase there is routing to use non-root. E.g. /chart instead of / in memory router, later we can introduce e.g. /assets/remoteEntry instead.
+
+| Variable       | Description                      | Default        |
+| -------------- | -------------------------------- | -------------- |
+| CHART_PROTOCOL | protocol of http/https for chart | http           |
+| CHART_DOMAIN   | Domain for chart                 | localhost:5002 |
+
+Any new microfront end needs to be added.
+
 ## Github PAT permission required
 
 1. For accessing private repo, please allow Profile -> Settings -> Personal Access Token (classic), open read:packages (basically th esame as vercel deployment). For more info refer: https://docs.github.com/en/packages/working-with-a-github-packages-registry. Add as Github secret in Settings->Secrets And variable and add NPM_TOKEN key. NOTE: In merge NODE_AUTH_TOKEN is used instead.

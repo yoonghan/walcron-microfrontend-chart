@@ -4,15 +4,21 @@ const moduleFederation = require("./moduleFederation");
 
 const deps = require("./package.json").dependencies;
 
+const port = 5002;
+const chartProtocol = process.env.CHART_PROTOCOL || "http";
+const chartDomain = process.env.CHART_DOMAIN || `localhost:${port}`;
+
 module.exports = {
-  output: {},
+  output: {
+    publicPath: `${chartProtocol}://${chartDomain}/`,
+  },
 
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
   },
 
   devServer: {
-    port: 5002,
+    port,
     historyApiFallback: true,
     headers: {
       "Access-Control-Allow-Origin": "*",
