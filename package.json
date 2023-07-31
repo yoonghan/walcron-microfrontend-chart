@@ -17,6 +17,7 @@
     "@babel/preset-typescript": "^7.10.4",
     "@types/react": "^18.0.13",
     "@types/react-dom": "^18.0.5",
+    "@yoonghan/walcron-microfrontend-shared": "^1.3.0",
     "autoprefixer": "^10.1.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.3.0",
